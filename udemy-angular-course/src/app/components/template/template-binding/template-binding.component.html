@@ -1,0 +1,27 @@
+<h2>Template</h2>
+<h3>Text Interpolation</h3>
+
+<p>Nome: {{ name }} - Idade: {{ age }} - Soma: {{ sum(1,2) }}</p>
+<p>Soma direta no text interpolagion: {{ 1 + 1}}</p>
+<p>Booleanos: {{ age < 1 }}</p>
+<p>Validações: {{ age < 1 ? "teste" : "teste2" }}</p>
+<p>Condição: {{ condition }}</p>
+
+<hr />
+
+<h2>Property Binding</h2>
+<!--<element [property]='value'></element>-->
+<button style="width: 200px; height: 40px;" [disabled]="isDisabled"></button>
+<img [src]="srcValue"/>
+
+<hr />
+<h2>Atribute binding</h2>
+<!-- <element [attr.attribute-you-are-targeting]='value'></element> -->
+<p [attr.title]="name" [attr.aria-label]="name">Pericles Carvalho</p>
+<hr />
+
+<h2>Class and Style binding</h2>
+<!--<p [class.background-red]="true"> {{ name }}</p>-->
+<p [class.background-red]="age >= 32" [class.background-blue]="age < 32" style="width: 200px;">
+    {{ name }}
+</p>

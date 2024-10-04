@@ -13,7 +13,6 @@ import { NewComponent } from './components/new-component/new-component.component
 })
 export class AppComponent {
   title = 'meu-primeiro-projeto-latest';
-  
 } 
 
 

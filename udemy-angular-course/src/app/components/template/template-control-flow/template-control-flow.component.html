@@ -1,0 +1,35 @@
+<h2>Control Flow</h2>
+
+<h3>Variavel isTrue = True </h3> 
+<h3>IF</h3>
+@if(isTrue)
+{
+TRUE
+}
+@else if ( 1===1){
+    ELSE IF
+}@else
+{
+    ELSE
+}
+
+@if(loadingData$ | async; as data) {
+    <p>{{ data }}</p>
+}@else {
+    <p>Carregando...</p>
+}
+
+<h3>FOR</h3>
+
+@if(loadingData$ | async; as data) {
+    <ul>
+        @for(item of data; track item){
+            <li>{{ item }} </li>
+        }
+    </ul>
+}@else {
+    <p>Carregando...</p>
+}
+
+<!-- forma antiga Ngif-->
+

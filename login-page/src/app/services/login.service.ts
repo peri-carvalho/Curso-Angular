@@ -8,7 +8,7 @@ import { Login } from '../interfaces/login';
   providedIn: 'root'
 })
 export class LoginService {
-
+  
   constructor(private httpClient: HttpClient) { }
 
   login(name: string, password: string){
@@ -19,7 +19,7 @@ export class LoginService {
       })
     )
   }
-
+}
   /* DTO
   login(login: Login){
     return this.httpClient.post<LoginResponse>("/login", {login}).pipe(
@@ -29,7 +29,14 @@ export class LoginService {
       })
     )
   }
-*/
+  Tentativa login local
+  export class LoginService {
+  private apiUrl = 'http://192.168.15.86:8080/login';  // Replace with your server's actual URL
 
+  constructor(private http: HttpClient) {}
 
+  login(email: string, password: string): Observable<any> {
+    return this.http.post(this.apiUrl, { email, password });
+  }
 }
+*/

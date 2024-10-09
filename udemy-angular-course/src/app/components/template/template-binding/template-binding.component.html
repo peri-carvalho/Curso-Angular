@@ -1,7 +1,7 @@
 <h2>Template</h2>
 <h3>Text Interpolation</h3>
 
-<p>Nome: {{ name }} - Idade: {{ age }} - Soma: {{ sum(1,2) }}</p>
+<p>Nome: {{ name }} - Idade: {{ age }} - <!--Soma: {{ sum(1,2) }}--></p>
 <p>Soma direta no text interpolagion: {{ 1 + 1}}</p>
 <p>Booleanos: {{ age < 1 }}</p>
 <p>Validações: {{ age < 1 ? "teste" : "teste2" }}</p>
@@ -25,3 +25,50 @@
 <p [class.background-red]="age >= 32" [class.background-blue]="age < 32" style="width: 200px;">
     {{ name }}
 </p>
+
+<p>Idade: {{ age }}</p>
+
+<!--<p [style.text-decoration]="'underline'">{{ age }}</p>-->
+<p [style.text-decoration]="isTextDecoration">Idade : {{ age }}</p>
+
+<hr/>
+
+<h2>Event binding</h2>
+<!--
+    <element
+        (TargetEventName)='TemplateStatment'
+        ></element>
+-->
+
+<button (click)="sum()">+</button>
+<button (click)="sub()">-</button>
+
+<input (keydown.shift.t)="onKeyDown($event)" />
+
+<div style="background: red; width: 300px; height: 300px; margin-top: 10px;"
+(mousemove)="onMouseMove($event)"
+>
+</div>
+
+<hr />
+
+<h3>Two-way binding</h3>
+<input [(ngModel)]="name" />
+
+{{ name }}
+
+<hr />
+
+<h3>Diretivas de atributo</h3>
+<div [ngClass]="{ 'background-red': true }" >Classes Condicionais.</div>
+<div [ngClass]="{ 'background-red': isDisabled }" >Classes Condicionais.</div>
+<div [ngClass]="{ 'background-red': age > 35,'background-blue': age < 35  }" >Classes Condicionais.</div>
+
+<div 
+    [ngStyle]="{
+    color: age > 33 ? 'green' : 'red',
+    'font-size': age > 35 ? '10px' : '20px',
+}"
+>
+ Estilo dinâmico
+</div>

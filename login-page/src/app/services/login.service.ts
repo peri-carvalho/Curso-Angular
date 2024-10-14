@@ -9,6 +9,9 @@ import { Login } from '../interfaces/login';
 })
 export class LoginService {
   
+  private apiUrl = 'http://192.168.15.86:8080/medicos';  // Replace with your server's actual URL
+  private loginUrl = `${this.apiUrl}/login`;
+
   constructor(private httpClient: HttpClient) { }
 
   login(name: string, password: string){
@@ -31,7 +34,7 @@ export class LoginService {
   }
   Tentativa login local
   export class LoginService {
-  private apiUrl = 'http://192.168.15.86:8080/login';  // Replace with your server's actual URL
+  private apiUrl = 'http://192.168.15.86:8080/medicos';  // Replace with your server's actual URL
 
   constructor(private http: HttpClient) {}
 

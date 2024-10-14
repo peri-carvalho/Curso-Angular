@@ -52,7 +52,7 @@ submit(){
 */
 
 navigate(){
-  this.router.navigate(["/signup"])
+  this.router.navigate(["/cadastro"])
 }
 
 }

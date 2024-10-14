@@ -1,7 +1,6 @@
-<h2>Control Flow</h2>
-
-<h3>Variavel isTrue = True </h3> 
+<h2>Control Flow</h2> 
 <h3>IF</h3>
+<h3>Variavel isTrue = True </h3>
 @if(isTrue)
 {
 TRUE
@@ -18,7 +17,7 @@ TRUE
 }@else {
     <p>Carregando...</p>
 }
-
+<!-- 
 <h3>FOR</h3>
 
 @if(loadingData$ | async; as data) {
@@ -31,5 +30,98 @@ TRUE
     <p>Carregando...</p>
 }
 
-<!-- forma antiga Ngif-->
+ forma antiga Ngif ngiF , NgFor, trackBy ..-->
 
+<h3>FOR</h3>
+
+<!-- Nova Forma -->
+ @for(
+    item of itens; track item.name;
+    let i = $index;
+    let c = $count;
+    let f = $first;
+    let l = $last;
+    let e = $even;
+    let o = $odd;
+ )  {
+    <p>{{ item.name}}</p>
+    <p>index - {{ i }}</p>
+    <p>count - {{ c }}</p>
+    <p>first - {{ f }}</p>
+    <p>last - {{ l }}</p>
+    <p>even - {{ e }}</p>
+    <p>odd - {{ o }}</p>
+ }
+
+ <hr>
+
+ <!-- Forma Antiga -->
+
+ <ng-container
+    *ngFor="
+    let item of itens;
+    let i = index;
+    let c = count;
+    let f = first;
+    let l = last;
+    let e = even;
+    let o = odd;
+    trackBy: trackByFn
+    "
+>
+ <p>{{ item.name }}</p>
+ <p>index - {{ i }}</p>
+ <p>count - {{ c }}</p>
+ <p>first - {{ f }}</p>
+ <p>last - {{ l }}</p>
+ <p>even - {{ e }}</p>
+ <p>odd - {{ o }}</p>
+</ng-container>
+
+<input #name type="text">
+<button (click)="addNewName(name.value)">Add Name</button>
+
+<!-- Nova Forma -->
+
+<ul>
+    @for (item of itens; track item.name) {
+        <li> {{ item.name }}</li>
+    } @empty {
+        <li>Não contém valores</li>
+    }
+</ul>
+
+<hr>
+
+<!-- Forma Antiga -->
+<ul>
+<ng-container *ngIf="itens.length === 0; else itensExist">
+    <li> Não contém valores </li>
+</ng-container>
+<ng-template #itensExist>
+    <ng-container *ngFor="let item of itens">
+        <li>
+            {{item.name}}
+        </li>
+    </ng-container>
+</ng-template>
+</ul>
+
+<hr>
+<h3>SWITH CASE</h3>
+<!-- Nova forma -->
+ @switch (switchCondition) {
+    @case ('A') {
+        <p>Sim sua letra é : A</p>
+    }
+    @case('B') {
+        <p>Sim sua letra é: B</p>
+    }
+    @default {
+        <p>Dados não foram encontrados.</p>
+    }
+ }
+
+ <!-- Versão antiga -->
+
+ 

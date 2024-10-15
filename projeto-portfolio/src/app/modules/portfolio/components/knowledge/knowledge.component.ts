@@ -11,23 +11,22 @@ import { IKnowledge } from '../../interface/Iknowledge.interface';
 })
 export class KnowledgeComponent {
 
-public arrayKnowledge = signal<IKnowledge[ ]>([
+public arrayKnowledge = signal<IKnowledge[]>([
   {
     src: 'assets/knowledge/html5.svg',
-    alt: 'html5',
+    alt: 'Html5',
   },
   {
-    src: 'assets/knowledge/html5.svg',
-    alt: 'html5',
+    src: 'assets/knowledge/javasccript.svg',
+    alt: 'JavaScript',
   },
   {
-    src: 'assets/knowledge/html5.svg',
-    alt: 'html5',
+    src: 'assets/knowledge/unity.svg',
+    alt: 'Unity',
   },
   {
-    src: 'assets/knowledge/html5.svg',
-    alt: 'html5',
-  },
-])
-
+    src: 'assets/knowledge/angular.svg',
+    alt: 'Angular',
+  }
+]);
 }

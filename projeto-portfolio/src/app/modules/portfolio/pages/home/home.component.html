@@ -2,4 +2,20 @@
 
 <main>
 <app-knowledge />
+<app-experiences />
+
+@defer (on viewport)
+{
+    <app-projects />
+}@placeholder 
+{
+    <section>
+        <h2>Loading Projects</h2>
+</section>
+}@error 
+{
+    <section>
+        <h2>Error Loading Projects</h2>
+    </section>
+}
 </main>

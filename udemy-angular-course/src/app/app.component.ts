@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 //Componentes
 import { PrimeiroComponente } from "./components/primeiro-componente/primeiro-componente.component";
@@ -7,6 +7,9 @@ import { TemplateVariablesComponent } from "./components/template/template-varia
 import { TemplateControlFlowComponent } from './components/template/template-control-flow/template-control-flow.component';
 import { TemplateDeferrableViewsComponent } from "./components/template/template-deferrable-views/template-deferrable-views.component";
 import { SignalsComponent } from './components/signals/signals/signals.component';
+import { PaiOuMaeComponent } from './components/comunicacao-entre-components/pai-ou-mae/pai-ou-mae.component';
+import { OutputComponent } from './components/comunicacao-entre-components/output/output.component';
+import { InputComponent } from './components/comunicacao-entre-components/input/input.component';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +21,10 @@ import { SignalsComponent } from './components/signals/signals/signals.component
     TemplateVariablesComponent, 
     TemplateControlFlowComponent, 
     TemplateDeferrableViewsComponent,
-    SignalsComponent
+    SignalsComponent,
+    PaiOuMaeComponent,
+    InputComponent,
+    OutputComponent
     ],
   template: ` 
   <!-- <router-outlet></router-outlet> -->
@@ -29,8 +35,10 @@ import { SignalsComponent } from './components/signals/signals/signals.component
   <app-template-binding/> 
   <app-template-variables/> 
   <app-template-control-flow /> 
-  <app-template-deferrable-views /> -->
-  <app-signals />
+  <app-template-deferrable-views /> 
+  <app-signals /> -->
+  <app-pai-ou-mae />
+
   `,
 })
 export class AppComponent {

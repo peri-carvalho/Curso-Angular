@@ -28,7 +28,8 @@
             text-align: center;
         }
 
-        nav ul, section {
+        nav ul, 
+        section {
             width: 100%;
             display: flex;
             justify-content: center;
@@ -38,11 +39,14 @@
 
         nav {
             margin: 20px 0;
-            li {
-                a{
+            ul{
+                li {
+                    a{
                     width: 250px;
-                }
+                    }
+                    }
             }
+            
         }
 
         section {

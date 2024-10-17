@@ -1,8 +1,20 @@
 :host{
     margin-top: 25px;
+
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    
+    ul{
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 5px;
+    }
 
     h2{
         text-align: center;
@@ -11,63 +23,65 @@
 
     details {
         overflow: hidden;
-        margin-top: 10px;
         background: var(--black-010);
         border-radius: 7px;
-        color: var(--white);
-    }
+        margin: 10px 10px;
+    
 
-    summary,
-    article {
-        padding: 10px 20px;
-        color: var(-- white);
-        transition: 500ms;
-    }
+        summary,
+        article {
+            strong{
+                color: var(--black);
+            }
+            padding: 10px 20px;
+            transition: 500ms;
+        }
 
-    summary{
-        cursor: pointer;
+        article {
+            color: white;
+        }
 
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        background: var(--primary-color);
-
-        p{
-            font-size: 14px;
-            color: var(--black-010);
-
-            padding: 5px;
-            margin: 0;
+        summary{
+            cursor: pointer;
 
             display: flex;
-            flex-direction: column;
-        }
-    }
+            justify-content: space-between;
+            align-items: center;
 
-    &[open]{
-        summary{
-         &::after {
-            content: url("../../../../../../public/assets/icons/chevron-up.svg");
-            margin: 5px;
-        }
+            background: var(--primary-color);
 
-         background: var(--primary-color);
-         border-radius: 7px 7px 0 0 !important;
-        }
-    }
+            p{
+                font-size: 14px;
+                color: var(--blak-010);
 
-    &:not([open]) {
-        summary{
-            &::after {
-                content: url("../../../../../../public/assets/icons/chevron-down.svg");
-                margin: 5px;
+                padding: 5px;
+                margin: 0;
+
+                display: flex;
+                flex-direction: column;
             }
         }
-
-        background: var(--primary-color);
-        border-radius: 7px 7px 0 0 !important;
-    }
+        &[open] {
+            summary{
+                &::after {
+                    content: url("../../../../../../public/assets/icons/chevron-up.svg");
+                    margin: 5px;
+                    width: 20px;
+                }
+                border-radius: 7px 7px 0 0;
+            }   
+        }
+        &:not([open]) {
+            summary{
+                &::after {
+                    content: url("../../../../../../public/assets/icons/chevron-down.svg");
+                    margin: 5px;
+                    width: 20px;
+                }
+                border-radius: 7px 7px 0 0;
+            }
+        }
+    }      
 
 
 }

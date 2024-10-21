@@ -20,7 +20,7 @@ function toUpperCase(value: string) {
 // }
 export class InputComponent {
   public name = signal("Sem dados");
-  // alias: "abacaxi" 
+  // alias: "abacaxi" apelido para variavel que chama no pai
   @Input({
     required: true,
     transform: toUpperCase

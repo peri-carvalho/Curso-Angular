@@ -10,22 +10,24 @@ import { SignalsComponent } from './components/signals/signals/signals.component
 import { PaiOuMaeComponent } from './components/comunicacao-entre-components/pai-ou-mae/pai-ou-mae.component';
 import { OutputComponent } from './components/comunicacao-entre-components/output/output.component';
 import { InputComponent } from './components/comunicacao-entre-components/input/input.component';
+import { AngularPipesComponent } from "./components/pipes/angular-pipes/angular-pipes.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
     RouterOutlet,
-    PrimeiroComponente, 
-    TemplateBindingComponent, 
-    TemplateVariablesComponent, 
-    TemplateControlFlowComponent, 
+    PrimeiroComponente,
+    TemplateBindingComponent,
+    TemplateVariablesComponent,
+    TemplateControlFlowComponent,
     TemplateDeferrableViewsComponent,
     SignalsComponent,
     PaiOuMaeComponent,
     InputComponent,
-    OutputComponent
-    ],
+    OutputComponent,
+    AngularPipesComponent
+],
   template: ` 
   <!-- <router-outlet></router-outlet> -->
   <h1>Curso de Angular</h1>
@@ -36,9 +38,9 @@ import { InputComponent } from './components/comunicacao-entre-components/input/
   <app-template-variables/> 
   <app-template-control-flow /> 
   <app-template-deferrable-views /> 
-  <app-signals /> -->
-  <app-pai-ou-mae />
-
+  <app-signals /> 
+  <app-pai-ou-mae /> -->
+  <app-angular-pipes />
   `,
 })
 export class AppComponent {
